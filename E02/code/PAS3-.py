@@ -1,88 +1,57 @@
-import pandas as pd
-import glob
 import os
+import pandas as pd
 
-def cargar_dades(fitxer):
+# Crear una función para procesar y reorganizar los datos
+def process_data(file_path, output_folder):
     try:
-        # Leer todas las filas ignorando las dos primeras líneas
-        df = pd.read_csv(fitxer, sep='\s+', skiprows=2, engine='python')
-        print(f"Contenido cargado del archivo {fitxer}:")
-        print(df.head(10))  # Mostrar las primeras 10 filas para ver el contenido
-    except Exception as e:
-        print(f"Error al leer el archivo {fitxer}: {e}")
-        return None
-    return df
+        # Leer el archivo de datos ignorando encabezados inconsistentes
+        with open(file_path, 'r') as file:
+            lines = file.readlines()
 
-def netejar_dades(df):
-    try:
-        # Verificar la consistencia de las columnas
+        # Leer los datos y omitir las primeras dos líneas
+        data = []
+        for line in lines[2:]:  # Comenzar desde la tercera línea
+            # Dividir cada línea en columnas según espacios y omitir la primera columna
+            parts = line.strip().split()[1:]
+            data.append(parts)
+
+        # Crear un DataFrame sin ajustar las filas
+        df = pd.DataFrame(data)
+
+        # Asegurarse de que las columnas numéricas sean consistentes
         for col in df.columns:
-            df[col] = pd.to_numeric(df[col], errors='coerce')
+            try:
+                df[col] = pd.to_numeric(df[col], errors='coerce')
+            except Exception as e:
+                print(f"Error procesando columna {col}: {e}")
 
-        # Reemplazar valores negativos por NaN
-        df[df < 0] = float('nan')
+        # Guardar el archivo reorganizado
+        base_name = os.path.basename(file_path)
+        output_path = os.path.join(output_folder, base_name)
 
-        # Gestionar valores nulos: reemplazar NaN en columnas numéricas por la media
-        df.fillna(df.mean(numeric_only=True), inplace=True)
+        # Escribir datos en un archivo nuevo
+        with open(output_path, 'w') as output_file:
+            for row in df.itertuples(index=False, name=None):
+                output_file.write('\t'.join(map(str, row)) + '\n')
 
-        # Eliminar filas duplicadas
-        df.drop_duplicates(inplace=True)
+        print(f"Archivo procesado y guardado en: {output_path}")
 
-        print("Datos limpiados:")
-        print(df.head(10))  # Mostrar las primeras 10 filas de los datos limpios
-
-        return df
     except Exception as e:
-        print(f"Error al limpiar los datos: {e}")
-        return None
+        print(f"Error procesando el archivo {file_path}: {e}")
 
-def guardar_dades(df, fitxer_destino):
-    """
-    Guarda el DataFrame limpio en un archivo nuevo.
-    """
-    try:
-        print(f"Guardando el DataFrame limpio en {fitxer_destino} con las siguientes primeras filas:")
-        print(df.head(10))  # Mostrar las primeras 10 filas antes de guardar
-        df.to_csv(fitxer_destino, sep='\t', index=False)
-        print(f"Dades netejades guardades a {fitxer_destino}")
-    except Exception as e:
-        print(f"Error al guardar el archivo {fitxer_destino}: {e}")
+# Función principal para procesar todos los archivos de una carpeta
+def process_folder(input_folder, output_folder):
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
 
-def netejar_dades_directori(carpeta_origen, carpeta_destino):
-    # Asegurarse de que la carpeta de destino exista
-    if not os.path.exists(carpeta_destino):
-        os.makedirs(carpeta_destino)
-        print(f"Carpeta {carpeta_destino} creada.")
+    for file_name in os.listdir(input_folder):
+        if file_name.endswith('.dat'):
+            file_path = os.path.join(input_folder, file_name)
+            process_data(file_path, output_folder)
 
-    # Listar todos los archivos .dat en la carpeta de origen
-    fitxers = glob.glob(os.path.join(carpeta_origen, '*.dat'))
-    print(f"Archivos encontrados en {carpeta_origen}: {fitxers}")
+# Ruta de las carpetas de entrada y salida
+input_folder = '../dades/dades_sin_ordenar'  # Ruta original de entrada
+output_folder = '../dades/dades_netas'  # Usar una ruta local
 
-    if not fitxers:
-        print(f"No se encontraron archivos .dat en {carpeta_origen}. Verifica la ruta y los archivos.")
-        return
-
-    # Procesar cada archivo .dat
-    for fitxer in fitxers:
-        print(f"Processant el fitxer: {fitxer}")
-
-        # Cargar el archivo
-        df = cargar_dades(fitxer)
-        if df is not None:
-            # Limpiar los datos
-            df = netejar_dades(df)
-
-            if df is not None:
-                # Guardar el archivo limpio en la carpeta de destino
-                fitxer_destino = os.path.join(carpeta_destino, os.path.basename(fitxer))
-                guardar_dades(df, fitxer_destino)
-
-# Ejemplo de uso
-script_dir = os.path.dirname(os.path.abspath(__file__))
-carpeta_origen = os.path.join(script_dir, '../dades/dades_sin_ordenar')
-carpeta_destino = os.path.join(script_dir, '../dades/dades_netas')
-
-print(f"Ruta de la carpeta de origen: {carpeta_origen}")
-print(f"Ruta de la carpeta de destino: {carpeta_destino}")
-
-netejar_dades_directori(carpeta_origen, carpeta_destino)
+# Procesar los archivos
+process_folder(input_folder, output_folder)
