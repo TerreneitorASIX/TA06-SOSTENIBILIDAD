@@ -14,14 +14,23 @@ def verificar_format_arxius(directori):
         ruta_completa = os.path.join(directori, arxiu)
         if os.path.isfile(ruta_completa):
             try:
-                with open(ruta_completa, 'r', encoding='utf-8') as f:
-                    # Leer las primeras filas para analizar el formato
-                    primera_fila = f.readline()
-                    delimitador = detectar_delimitador(primera_fila)
-                    columnas = len(primera_fila.split(delimitador))
-                    
-                    # Guardar el formato detectado
-                    formatos[arxiu] = {'delimitador': delimitador, 'columnas': columnas}
+                # Intentar abrir el archivo con diferentes codificaciones
+                for encoding in ['utf-8', 'iso-8859-1', 'windows-1252']:
+                    try:
+                        with open(ruta_completa, 'r', encoding=encoding) as f:
+                            # Leer las primeras filas para analizar el formato
+                            primera_fila = f.readline()
+                            delimitador = detectar_delimitador(primera_fila)
+                            columnas = len(primera_fila.split(delimitador))
+                            
+                            # Guardar el formato detectado
+                            formatos[arxiu] = {'delimitador': delimitador, 'columnas': columnas}
+                            break  # Salir del bucle si se abre correctamente
+                    except UnicodeDecodeError:
+                        continue  # Intentar con la siguiente codificación
+                else:
+                    # Si ninguna codificación funcionó, lanzar una excepción
+                    raise UnicodeDecodeError(f"No se pudo leer el archivo {arxiu} con ninguna codificación soportada.")
             except Exception as e:
                 print(f"Error leyendo el archivo {arxiu}: {e}")
     
