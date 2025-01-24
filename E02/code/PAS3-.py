@@ -19,6 +19,9 @@ def netejar_dades(df):
         for col in df.columns:
             df[col] = pd.to_numeric(df[col], errors='coerce')
 
+        # Reemplazar valores negativos por NaN
+        df[df < 0] = float('nan')
+
         # Gestionar valores nulos: reemplazar NaN en columnas numéricas por la media
         df.fillna(df.mean(numeric_only=True), inplace=True)
 
