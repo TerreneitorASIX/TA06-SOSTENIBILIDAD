@@ -89,4 +89,7 @@ En general han ido bien estos dos primeros ejercicios, el ultima dia de entrega 
 Posdata el github del escritorio va muy bien pero hace que el visual studio haga que pete el ordenador.
 
 
+Exercici 3:
+Para hacer este ejercicio, hemos cogido el codigo del paso anterior que generaba un archivo con las estadisticas que necesitamos como base y con ese mismo codigo ahora genera los datos a partir de los archivos limpios y ademas saca los datos por terminal (estadisticas.py), este script (como el anterior) genera los datos en .csv, tambien imprime errores en un archivo log.
 
+El siguiente paso (graficos.py) coge el archivo generado por el punto anterior (resultats_PX.csv) y genera 5 graficos; Precipitacio mitjana, total, taxa de variacio, anys més i menys plujosos, mes i menys variació interanual.
