@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+#header_superior {
+    color: white;
+    text-align: center;
+    position: relative; /* Para posicionar elementos dentro de este contenedor */
+    text-align: center;
+}
+#glowing-text {
+    font-size: 70px; /* Tamaño de la fuente */
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    animation: glow-animation 1.5s ease-in-out infinite alternate;
+    margin: 0; /* Asegúrate de que no haya márgenes que desajusten el título */
+}
+@keyframes glow-animation {
+    0% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #00e0ff, 0 0 20px #00e0ff, 0 0 30px #00e0ff, 0 0 40px #00e0ff;
+    }
+    50% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #00e0ff, 0 0 30px #00e0ff, 0 0 50px #00e0ff, 0 0 60px #00e0ff;
+    }
+    100% {
+        text-shadow: 0 0 15px #fff, 0 0 30px #00e0ff, 0 0 40px #00e0ff, 0 0 70px #00e0ff, 0 0 80px #00e0ff;
+    }
+}
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Colocar detrás del contenido */
+    pointer-events: none; /* Permitir interacciones con el contenido */
+}
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.stats-container {
+    display: flex;
+    gap: 15px;
+    padding: 20px 0;
+}
+
+.stats-box {
+    font-size: 18px;
+    flex: 1;
+    text-align: center;
+}
+
+#search {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.file-list {
+    margin-bottom: 20px;
+}
+
+.file-item {
+    padding: 10px;
+    background: white;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.file-item:hover {
+    background: #e0e0e0;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.column {
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-height: 100px;
+    background: white;
+}
+
+.image-grid {
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.chart {
+    width: 100%;
+    cursor: pointer;
+}
