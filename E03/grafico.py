@@ -72,7 +72,7 @@ plt.xlabel("Anys")
 plt.ylabel("Precipitació (mm)")
 plt.grid(axis='y')
 plt.legend()
-plt.savefig("grafic_comparacio_plujosos.png.png")
+plt.savefig("grafic_comparacio_plujosos.png")
 plt.close()
 
 # Gráfico 5: Comparación entre "Més variació interanual" y "Menys variació interanual" (Barras)
