@@ -134,7 +134,7 @@ for arxiu in arxius:
     processar_arxiu(arxiu)
 
 # Verificar y mostrar el contenido de cada archivo CSV generado
-csv_files = glob.glob("./dades/Resultados_medias/*.csv")
+csv_files = glob.glob("./dades/resultats/*.csv")
 for archivo_csv in csv_files:
     print(f"Contenido del archivo {archivo_csv}:")
     with open(archivo_csv, mode='r') as archivo:
