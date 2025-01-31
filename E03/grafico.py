@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Cargar el archivo CSV
-archivo = "../../E02/dades/resultats_estadistics/resultats_P1.csv"
+archivo = "../E02/dades/resultats_estadistics/resultats_P1.csv"
 df = pd.read_csv(archivo, header=None, names=["Tipo", "Col2", "Col3", "Col4"])
 
 # Filtrar datos para "Mitjana/Precipitació total"

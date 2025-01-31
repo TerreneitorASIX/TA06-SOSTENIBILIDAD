@@ -140,7 +140,7 @@ arxius = glob.glob("precip.P*.MIROC5.RCP60.2006-2100.REGRESION.dat")
 for arxiu in arxius:
     processar_arxiu(arxiu)
 
-archivo_csv = '../../E02/dades/resultats_estadistics/resultats_P1.csv'
+archivo_csv = '../E02/dades/resultats_estadistics/resultats_P1.csv'
 
 # Abre el archivo en modo lectura
 try:
