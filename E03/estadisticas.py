@@ -134,13 +134,13 @@ def processar_arxiu(entrada):
         logging.error(f"Error en processar l'arxiu {entrada}: {e}")
 
 # Busquem tots els fitxers que segueixen el patró "precip.PX.MIROC5.RCP60.2006-2100.REGRESION.dat"
-arxius = glob.glob("precip.P*.MIROC5.RCP60.2006-2100.REGRESION.dat")
+arxius = glob.glob("../E02/dades/resultats/*.dat")
 
 # Processar cada arxiu trobat
 for arxiu in arxius:
     processar_arxiu(arxiu)
 
-archivo_csv = 'resultats_P1.csv'
+archivo_csv = '../E02/dades/resultats/*.dat'
 
 # Abre el archivo en modo lectura
 try:
