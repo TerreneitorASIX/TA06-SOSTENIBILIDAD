@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Cargar el archivo CSV
-archivo = "resultats_P1.csv"
+archivo = "../../E02/dades/resultats_estadistics/resultats_P1.csv"
 df = pd.read_csv(archivo, header=None, names=["Tipo", "Col2", "Col3", "Col4"])
 
 # Filtrar datos para "Mitjana/Precipitació total"
@@ -37,7 +37,7 @@ plt.xlabel("Años")
 plt.ylabel("Mitjana")
 plt.grid()
 plt.legend()
-plt.savefig("grafico_mitjana.png")  # Guardar como imagen PNG
+plt.savefig("../Imatges/grafico_mitjana.png")  # Guardar como imagen PNG
 plt.close()
 
 # Gráfico 2: Precipitació total
@@ -48,7 +48,7 @@ plt.xlabel("Años")
 plt.ylabel("Precipitació (mm)")
 plt.grid()
 plt.legend()
-plt.savefig("grafic_precipitacio_total.png")  # Guardar como imagen PNG
+plt.savefig("../Imatges/grafic_precipitacio_total.png")  # Guardar como imagen PNG
 plt.close()
 
 # Gráfico 3: Taxa de variació interanual
@@ -59,7 +59,7 @@ plt.xlabel("Años")
 plt.ylabel("Variació (%)")
 plt.grid()
 plt.legend()
-plt.savefig("grafic_variacio_interanual.png")  # Guardar como imagen PNG
+plt.savefig("../Imatges/grafic_variacio_interanual.png")  # Guardar como imagen PNG
 plt.close()
 
 
@@ -72,7 +72,7 @@ plt.xlabel("Anys")
 plt.ylabel("Precipitació (mm)")
 plt.grid(axis='y')
 plt.legend()
-plt.savefig("grafic_comparacio_plujosos.png")
+plt.savefig("../Imatges/grafic_comparacio_plujosos.png")
 plt.close()
 
 # Gráfico 5: Comparación entre "Més variació interanual" y "Menys variació interanual" (Barras)
@@ -84,7 +84,7 @@ plt.xlabel("Anys")
 plt.ylabel("Variació (%)")
 plt.grid(axis='y')
 plt.legend()
-plt.savefig("grafic_comparacio_variacio.png")
+plt.savefig("../Imatges/grafic_comparacio_variacio.png")
 plt.close()
 
 print("Gráficos guardados como imágenes PNG:")
