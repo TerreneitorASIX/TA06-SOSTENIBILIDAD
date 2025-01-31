@@ -113,7 +113,7 @@ def processar_arxiu(entrada):
         resultats.append([f"{any_previ}-{any_actual}", f"{taxa:.2f}%"])
 
     # Crear el nom del fitxer de sortida basat en el nom del fitxer d'entrada
-    nom_sortida = f"./dades/resultats/resultats_{os.path.basename(entrada).split('.')[1]}.csv"
+    nom_sortida = f"../dades/resultats/resultats_{os.path.basename(entrada).split('.')[1]}.csv"
 
     # Crear el directorio de sortida si no existe
     os.makedirs(os.path.dirname(nom_sortida), exist_ok=True)
@@ -134,7 +134,7 @@ for arxiu in arxius:
     processar_arxiu(arxiu)
 
 # Verificar y mostrar el contenido de cada archivo CSV generado
-csv_files = glob.glob("./dades/resultats/*.csv")
+csv_files = glob.glob("../dades/resultats/*.csv")
 for archivo_csv in csv_files:
     print(f"Contenido del archivo {archivo_csv}:")
     with open(archivo_csv, mode='r') as archivo:
