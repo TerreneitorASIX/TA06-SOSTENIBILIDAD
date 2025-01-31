@@ -133,8 +133,8 @@ def processar_arxiu(entrada):
     except Exception as e:
         logging.error(f"Error en processar l'arxiu {entrada}: {e}")
 
-# Busquem tots els fitxers que segueixen el patró "precip.PX.MIROC5.RCP60.2006-2100.REGRESION.dat"
-arxius = glob.glob("../E02/dades/resultats/*.dat")
+# Busquem tots els fitxers que segueixen el patró "*.dat" a la carpeta dades_netas
+arxius = glob.glob("../dades/dades_netas/*.dat")
 
 # Processar cada arxiu trobat
 for arxiu in arxius:
