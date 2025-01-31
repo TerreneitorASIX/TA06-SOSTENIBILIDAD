@@ -153,3 +153,5 @@ try:
             print(fila)
 except Exception as e:
     logging.error(f"Error en llegir l'arxiu CSV {archivo_csv}: {e}")
+
+    aaaa
