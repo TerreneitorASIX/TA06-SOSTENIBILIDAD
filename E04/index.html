@@ -12,7 +12,9 @@
     <header id="header_superior">
         <h1 id="glowing-text">destacados</h1>
     </header>
+    
     <canvas id="canvas"></canvas>
+
     <div class="container">
         <input type="text" id="search" placeholder="Buscar archivo CSV...">
         <div id="file-list" class="file-list"></div>
@@ -34,13 +36,8 @@
             <div class="column" id="col4"></div>
         </div>
 
-        <div class="image-grid">
-            <img src="img/grafic_comparacio_plujosos.png" class="chart" onclick="openFullscreen(this)">
-            <img src="img/grafic_comparacio_variacio.png" class="chart" onclick="openFullscreen(this)">
-            <img src="img/grafic_precipitacio_total.png" class="chart" onclick="openFullscreen(this)">
-            <img src="img/grafic_variacio_interanual.png" class="chart" onclick="openFullscreen(this)">
-            <img src="img/grafico_mitjana.png" class="chart" onclick="openFullscreen(this)">
-        </div>
+        <!-- NUEVO: Contenedor para las imágenes -->
+        <div id="image-container" class="image-container"></div>
     </div>
     
     <script src="./js/animacion.js"></script>
