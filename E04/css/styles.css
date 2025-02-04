@@ -32,14 +32,34 @@ body {
         text-shadow: 0 0 15px #fff, 0 0 30px #00e0ff, 0 0 40px #00e0ff, 0 0 70px #00e0ff, 0 0 80px #00e0ff;
     }
 }
+
+#image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#image-container img {
+    width: 40%; 
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+#image-container img:hover {
+    transform: scale(1.5);
+}
+
 canvas {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Colocar detrás del contenido */
-    pointer-events: none; /* Permitir interacciones con el contenido */
+    z-index: -1;
+    pointer-events: none;
 }
 .container {
     width: 80%;
@@ -107,4 +127,9 @@ canvas {
 .chart {
     width: 100%;
     cursor: pointer;
+}
+
+
+.hidden {
+    display: none;
 }

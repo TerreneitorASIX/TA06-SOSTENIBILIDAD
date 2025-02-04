@@ -10,7 +10,7 @@
 <body>
     
     <header id="header_superior">
-        <h1 id="glowing-text">destacados</h1>
+        <h1 id="glowing-text">DADES-TA06</h1>
     </header>
     
     <canvas id="canvas"></canvas>
@@ -38,16 +38,24 @@
 
         <!-- NUEVO: Contenedor para las imágenes -->
         <div id="image-container" class="image-container"></div>
+
+        <div id="fullscreen-modal" class="fullscreen-modal hidden">
+            <img id="fullscreen-img" class="fullscreen-img" alt="Imagen en pantalla completa">
+        </div>
     </div>
     
     <script src="./js/animacion.js"></script>
+
     <script>
+        document.getElementById('fullscreen-modal').addEventListener('click', function () {
+            this.classList.add('hidden');
+        });
+
         function openFullscreen(img) {
-            const modal = document.createElement('div');
-            modal.classList.add('fullscreen-modal');
-            modal.innerHTML = `<img src="${img.src}" class="fullscreen-img">`;
-            modal.onclick = () => modal.remove();
-            document.body.appendChild(modal);
+            const modal = document.getElementById('fullscreen-modal');
+            const modalImg = document.getElementById('fullscreen-img');
+            modalImg.src = img.src;
+            modal.classList.remove('hidden');
         }
     </script>
 </body>
