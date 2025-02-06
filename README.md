@@ -93,6 +93,10 @@ Posdata el github del escritorio va muy bien pero hace que el visual studio haga
 ## Exercici 3:
 Para hacer este ejercicio, hemos cogido el codigo del paso anterior que generaba un archivo con las estadisticas que necesitamos como base y con ese mismo codigo ahora genera los datos a partir de los archivos limpios y ademas saca los datos por terminal (estadisticas.py), este script (como el anterior) genera los datos en .csv, tambien imprime errores en un archivo log.
 
+A continuación tendremos la captura de una de las graficas
+
+![image](https://github.com/TerreneitorASIX/TA06-SOSTENIBILIDAD/blob/a29d254c1c0bdb04569400056318873fd1125d93/E04/img/resultats_P10004_grafic_comparacio_plujosos.png)
+
 El siguiente paso (graficos.py) coge el archivo generado por el punto anterior (resultats_PX.csv) y genera 5 graficos; Precipitacio mitjana, total, taxa de variacio, anys més i menys plujosos, mes i menys variació interanual.
 
 ## Exercici 4:
@@ -107,4 +111,5 @@ Los datos utilizados son los datos que hemos ido realizando durante este
 También tenemos un buscador donde puedes buscar por algún archivo en concreto, y al darle clic podrás visualizar diferentes datos como pueden ser los años con más y menos lluvias, ademas de mostrar los años con menos y mas variación interanual, esto quiere decir que mostrará la diferencia en porcentaje sobre las precipitatciones entre un año y el anterior. Estos datos se mostrarán en 4 grupos donde mostraremos 5 años de cada grupo.
 Ademas de que en nuestra pagina podras visualziar las graficas de los datos que se muestran en pantalla. 
 A continuación pondremos una captura de nuestra pagina
-![image](https://github.com/TerreneitorASIX/TA06-SOSTENIBILIDAD/blob/a29d254c1c0bdb04569400056318873fd1125d93/E04/img/resultats_P10004_grafic_comparacio_plujosos.png)
+
+![image](https://github.com/TerreneitorASIX/TA06-SOSTENIBILIDAD/blob/cd84bf44cfa992e7cae0371cc7fb58562f0f5363/E04/img/Captura%20de%20pantalla%20de%202025-02-06%2009-33-12.png)
