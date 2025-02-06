@@ -117,3 +117,9 @@ Además de que en nuestra página podrás visualizar las gráficas de los datos 
 A continuación pondremos una captura de nuestra página.
 
 ![image](https://github.com/TerreneitorASIX/TA06-SOSTENIBILIDAD/blob/cd84bf44cfa992e7cae0371cc7fb58562f0f5363/E04/img/Captura%20de%20pantalla%20de%202025-02-06%2009-33-12.png)
+
+## Ejercicio 5:
+
+En este último ejército ha sido un ejercicio de reflexión el cual podemos plasmar nuestras emociones y de lo que hemos aprendido durante esta práctica.
+
+![image](https://github.com/TerreneitorASIX/TA06-SOSTENIBILIDAD/blob/481486a3ab01602f14624ee2ec74a639b68ea229/E05/Ejercicio5.png)
