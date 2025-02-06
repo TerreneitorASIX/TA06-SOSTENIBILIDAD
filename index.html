@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visor de CSV</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script defer src="js/Script.js"></script>
+</head>
+<body>
+    
+    <header id="header_superior">
+        <h1 id="glowing-text">DADES-TA06</h1>
+    </header>
+    
+    <canvas id="canvas"></canvas>
+
+    <div class="container">
+        <input type="text" id="search" placeholder="Buscar archivo CSV...">
+        <div id="file-list" class="file-list"></div>
+
+        <!-- NUEVO: Nombre del archivo seleccionado -->
+        <div id="selected-file-name" class="file-name">Ningún archivo seleccionado</div>
+
+        <div class="stats-container">
+            <div class="stats-box">5 anys més plujosos:</div>
+            <div class="stats-box">5 anys menys plujosos:</div>
+            <div class="stats-box">5 anys amb més variació interanual:</div>
+            <div class="stats-box">5 anys amb menys variació interanual:</div>
+        </div>
+
+        <div class="content-grid">
+            <div class="column" id="col1"></div>
+            <div class="column" id="col2"></div>
+            <div class="column" id="col3"></div>
+            <div class="column" id="col4"></div>
+        </div>
+
+        <!-- NUEVO: Contenedor para las imágenes -->
+        <div id="image-container" class="image-container"></div>
+
+        <div id="fullscreen-modal" class="fullscreen-modal hidden">
+            <img id="fullscreen-img" class="fullscreen-img" alt="Imagen en pantalla completa">
+        </div>
+    </div>
+    
+    <script src="./js/animacion.js"></script>
+
+    <script>
+        document.getElementById('fullscreen-modal').addEventListener('click', function () {
+            this.classList.add('hidden');
+        });
+
+        function openFullscreen(img) {
+            const modal = document.getElementById('fullscreen-modal');
+            const modalImg = document.getElementById('fullscreen-img');
+            modalImg.src = img.src;
+            modal.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
