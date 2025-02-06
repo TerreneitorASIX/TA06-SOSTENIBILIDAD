@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(`Cargando el archivo: csv/${file}`);
         selectedFileName.textContent = `Archivo seleccionado: ${file}`;
 
-        fetch(`csv/${file}`)
+        fetch(`E04/csv/${file}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`Error al cargar el archivo: ${response.statusText}`);
@@ -85,8 +85,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 // 🔹 Cargar imágenes correspondientes al archivo seleccionado
                 const fileBaseName = file.replace(".csv", "");
-                const img1 = `img/${fileBaseName}_grafic_comparacio_plujosos.png`;
-                const img2 = `img/${fileBaseName}_grafic_comparacio_variacio.png`;
+                const img1 = `E04/img/${fileBaseName}_grafic_comparacio_plujosos.png`;
+                const img2 = `E04/img/${fileBaseName}_grafic_comparacio_variacio.png`;
 
                 imageContainer.innerHTML = `
                     <img src="${img1}" class="chart" onclick="toggleImageSize(this)" onerror="this.style.display='none'" alt="Gráfico Plujosos">
