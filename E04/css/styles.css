@@ -21,17 +21,7 @@ body {
     animation: glow-animation 1.5s ease-in-out infinite alternate;
     margin: 0; /* Asegúrate de que no haya márgenes que desajusten el título */
 }
-@keyframes glow-animation {
-    0% {
-        text-shadow: 0 0 5px #fff, 0 0 10px #00e0ff, 0 0 20px #00e0ff, 0 0 30px #00e0ff, 0 0 40px #00e0ff;
-    }
-    50% {
-        text-shadow: 0 0 10px #fff, 0 0 20px #00e0ff, 0 0 30px #00e0ff, 0 0 50px #00e0ff, 0 0 60px #00e0ff;
-    }
-    100% {
-        text-shadow: 0 0 15px #fff, 0 0 30px #00e0ff, 0 0 40px #00e0ff, 0 0 70px #00e0ff, 0 0 80px #00e0ff;
-    }
-}
+
 
 #image-container {
     display: flex;
@@ -52,15 +42,7 @@ body {
     transform: scale(1.5);
 }
 
-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    pointer-events: none;
-}
+
 .container {
     width: 80%;
     margin: auto;
