@@ -1,3 +1,4 @@
+##Exercici1
 Para pedir la API nos dirigimos aqui → [https://opendata.aemet.es/centrodedescargas/altaUsuario](https://opendata.aemet.es/centrodedescargas/altaUsuario)
 Nos aparecerá lo siguiente
 
@@ -16,15 +17,15 @@ Entramos en la página web de predicción climática, filtramos según los datos
 ![Descargar_Datos](https://github.com/user-attachments/assets/9d5776cb-2ea2-402a-8233-40989dfcb0ef)
 
 Lectura de fitxers: Cal assegurar-se que tots els fitxers tenen el mateix format. I les dades són correctes i no provoquen cap mena d’error.
-
-PAS1- Revisar les capçaleres, separació entre dades, comentaris …
+##Exercici2
+##PAS1- Revisar les capçaleres, separació entre dades, comentaris …
 Saber com estan delimitades les dades (Espais, comes o tabulació)
 Quines columnes hi ha i quins tipus de dades
 
 Los datos obtenidos son datos de Precipitaciones Micro etc 
 ![image](https://github.com/user-attachments/assets/2336598e-70eb-4b58-b2f7-224fa4bb0a29)
 
-PAS2- Verificar que tots els arxius tenen el mateix format. 
+##PAS2- Verificar que tots els arxius tenen el mateix format. 
 Es pot fer un script de validació bàsica que llegeixi les primeres files de cada arxiu i determini el nombre de columnes i delimitadors.
 
 Al ejecutar el código nos aparece lo siguiente
@@ -37,7 +38,7 @@ Aquí podemos visualizar como el delimitador hay dos opciones
 
 Además de poder ver el número de columnas el cual se ha detectado.
 
-PAS3- Netejar les dades: 
+##PAS3- Netejar les dades: 
 Assegurar que les dades no continguin errors, valors que falten o inconsistències:
 Lectura: Utilitzar  pandas per gestionar els fitxers i gestionar errors de lectura.
 Verifica la consistència de les columnes: Assegurar que les dades a cada columna tenen el tipus esperat (numèric, data, etc.).
@@ -48,7 +49,7 @@ Por ende cuando vemos los datos limpios tras ejecutar el código veremos lo sigu
 
 ![image](https://github.com/user-attachments/assets/3d74a41a-1c3c-4788-a96a-6ed67d47046f)
 
-PAS4- Documenta tot el procés per si l’has de repetir alguna vegada.
+##PAS4- Documenta tot el procés per si l’has de repetir alguna vegada.
 Indica quines decisions has pres, que has fet amb els valors nuls i com has solucionat inconsistències.
 
 Calcular el percentatge de dades mancants (-999)
@@ -89,7 +90,7 @@ En general han ido bien estos dos primeros ejercicios, el ultima dia de entrega 
 Posdata el github del escritorio va muy bien pero hace que el visual studio haga que pete el ordenador.
 
 
-Exercici 3:
+##Exercici 3:
 Para hacer este ejercicio, hemos cogido el codigo del paso anterior que generaba un archivo con las estadisticas que necesitamos como base y con ese mismo codigo ahora genera los datos a partir de los archivos limpios y ademas saca los datos por terminal (estadisticas.py), este script (como el anterior) genera los datos en .csv, tambien imprime errores en un archivo log.
 
 El siguiente paso (graficos.py) coge el archivo generado por el punto anterior (resultats_PX.csv) y genera 5 graficos; Precipitacio mitjana, total, taxa de variacio, anys més i menys plujosos, mes i menys variació interanual.
