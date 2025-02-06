@@ -95,6 +95,7 @@ Para hacer este ejercicio, hemos cogido el codigo del paso anterior que generaba
 
 El siguiente paso (graficos.py) coge el archivo generado por el punto anterior (resultats_PX.csv) y genera 5 graficos; Precipitacio mitjana, total, taxa de variacio, anys més i menys plujosos, mes i menys variació interanual.
 
+## Exercici 4:
 
 En este ejercicio nuestro objetivo es poder publicar una página web funcional mediante el GitHub, teniendo en nuestra página diferentes lenguajes de programación como pueden ser:
 - HTML
