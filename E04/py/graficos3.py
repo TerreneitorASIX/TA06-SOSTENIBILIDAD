@@ -3,7 +3,7 @@ import glob
 import os
 
 # Ruta donde están los CSV
-ruta_archivos = "csv/resultats_P*.csv"
+ruta_archivos = "./csv/resultats_P*.csv"
 archivos = glob.glob(ruta_archivos)  # Encuentra todos los archivos que coincidan con el patrón
 
 if not archivos:
@@ -74,7 +74,7 @@ for archivo in archivos:
     plt.ylabel("Precipitació (mm)")
     plt.grid(axis='y')
     plt.legend()
-    nombre_grafico_plujosos = f"img/{prefijo}_grafic_comparacio_plujosos.png"
+    nombre_grafico_plujosos = f"./img/{prefijo}_grafic_comparacio_plujosos.png"
     plt.savefig(nombre_grafico_plujosos)
     plt.close()
 
@@ -87,7 +87,7 @@ for archivo in archivos:
     plt.ylabel("Variació (%)")
     plt.grid(axis='y')
     plt.legend()
-    nombre_grafico_variacio = f"img/{prefijo}_grafic_comparacio_variacio.png"
+    nombre_grafico_variacio = f"./img/{prefijo}_grafic_comparacio_variacio.png"
     plt.savefig(nombre_grafico_variacio)
     plt.close()
 
