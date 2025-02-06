@@ -107,4 +107,4 @@ Los datos utilizados son los datos que hemos ido realizando durante este
 También tenemos un buscador donde puedes buscar por algún archivo en concreto, y al darle clic podrás visualizar diferentes datos como pueden ser los años con más y menos lluvias, ademas de mostrar los años con menos y mas variación interanual, esto quiere decir que mostrará la diferencia en porcentaje sobre las precipitatciones entre un año y el anterior. Estos datos se mostrarán en 4 grupos donde mostraremos 5 años de cada grupo.
 Ademas de que en nuestra pagina podras visualziar las graficas de los datos que se muestran en pantalla. 
 A continuación pondremos una captura de nuestra pagina
-![image](E04/img/Captura de pantalla de 2025-02-06 09-33-12.png)
+![image](https://github.com/TerreneitorASIX/TA06-SOSTENIBILIDAD/blob/a29d254c1c0bdb04569400056318873fd1125d93/E04/img/resultats_P10004_grafic_comparacio_plujosos.png)
