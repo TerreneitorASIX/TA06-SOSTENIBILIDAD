@@ -67,8 +67,8 @@ for archivo in archivos:
 
     # Gráfico 1: Comparación entre "5 anys més plujosos" y "5 anys menys plujosos"
     plt.figure(figsize=(10, 6))
-    plt.bar([str(any) for any in anys_mes_plujosos], valors_mes_plujosos, color='blue', label="5 anys més plujosos")
-    plt.bar([str(any) for any in anys_menys_plujosos], valors_menys_plujosos, color='red', label="5 anys menys plujosos")
+    plt.bar([any[-2:] for any in anys_mes_plujosos], valors_mes_plujosos, color='blue', label="5 anys més plujosos")
+    plt.bar([any[-2:] for any in anys_menys_plujosos], valors_menys_plujosos, color='red', label="5 anys menys plujosos")
     plt.title(f"{prefijo}: Comparació Anys més i menys plujosos")
     plt.xlabel("Anys")
     plt.ylabel("Precipitació (mm)")
@@ -80,8 +80,8 @@ for archivo in archivos:
 
     # Gráfico 2: Comparación entre "Més variació interanual" y "Menys variació interanual"
     plt.figure(figsize=(10, 6))
-    plt.bar([str(any) for any in anys_mes_variacio], valors_mes_variacio, color='green', label="Més variació interanual")
-    plt.bar([str(any) for any in anys_menys_variacio], valors_menys_variacio, color='orange', label="Menys variació interanual")
+    plt.bar([any[-2:] for any in anys_mes_variacio], valors_mes_variacio, color='green', label="Més variació interanual")
+    plt.bar([any[-2:] for any in anys_menys_variacio], valors_menys_variacio, color='orange', label="Menys variació interanual")
     plt.title(f"{prefijo}: Comparació Variació interanual")
     plt.xlabel("Anys")
     plt.ylabel("Variació (%)")
